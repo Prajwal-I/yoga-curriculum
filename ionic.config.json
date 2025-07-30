@@ -1,0 +1,7 @@
+{
+  "name": "yoga-curriculum",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
