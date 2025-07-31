@@ -1,20 +1,49 @@
-
 import { Component, inject } from '@angular/core';
-import { RefresherCustomEvent, IonHeader, IonToolbar, IonTitle, IonContent, IonRefresher, IonRefresherContent, IonList } from '@ionic/angular/standalone';
+import {
+  RefresherCustomEvent,
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonContent,
+  IonRefresher,
+  IonRefresherContent,
+  IonList,
+} from '@ionic/angular/standalone';
 import { MessageComponent } from '@features/home/components/message/message.component';
 
-import { DataService, Message } from '@services/data.service';
+import {
+  DataService,
+  Message,
+} from '@src/src/app/core/services/api/data.service';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonRefresher, IonRefresherContent, IonList, MessageComponent],
+  imports: [
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    IonRefresher,
+    IonRefresherContent,
+    IonList,
+    MessageComponent,
+    TranslatePipe,
+  ],
 })
 export class HomePage {
   private data = inject(DataService);
-  constructor() {}
+  private translate = inject(TranslateService);
 
+  constructor() {
+    this.translate.use('tl');
+  }
+
+  setLanguage(lang: string) {
+    this.translate.use(lang);
+  }
   refresh(ev: any) {
     setTimeout(() => {
       (ev as RefresherCustomEvent).detail.complete();
