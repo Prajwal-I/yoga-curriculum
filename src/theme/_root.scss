@@ -1,0 +1,11 @@
+@use "variables" as vars;
+
+:root {
+  --ion-color-saffron-orange: #{vars.$saffron-orange};
+  --ion-color-saffron-orange-dark: #{vars.$saffron-orange-dark};
+  --ion-color-saffron-orange-light: #{vars.$saffron-orange-light};
+
+  --ion-color-light-grey: #{vars.$light-grey};
+  --ion-color-medium-grey: #{vars.$medium-grey};
+  --ion-color-dark-grey: #{vars.$dark-grey};
+}

@@ -16,6 +16,13 @@ import {
   Message,
 } from '@src/src/app/core/services/api/data.service';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+import {
+  IonCard,
+  IonCardContent,
+  IonCardHeader,
+  IonCardSubtitle,
+  IonCardTitle,
+} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-home',
@@ -31,6 +38,11 @@ import { TranslatePipe, TranslateService } from '@ngx-translate/core';
     IonList,
     MessageComponent,
     TranslatePipe,
+    IonCard,
+    IonCardContent,
+    IonCardHeader,
+    IonCardSubtitle,
+    IonCardTitle,
   ],
 })
 export class HomePage {
