@@ -1,6 +1,11 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title> Inbox </ion-title>
+    <ion-title>
+      <div class="home-title">
+        {{ 'home.title' | translate }}
+        <hr class="title-underline" />
+      </div>
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,31 +16,13 @@
 
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large"> Inbox </ion-title>
+      <ion-title size="large"> {{ 'home.title' | translate }} </ion-title>
     </ion-toolbar>
   </ion-header>
 
-  {{ 'home.om' | translate }}
+  <app-weekly-report></app-weekly-report>
 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Card Title</ion-card-title>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-    </ion-card-header>
+  <app-patanjali-maharishi-statue></app-patanjali-maharishi-statue>
 
-    <ion-card-content>
-      Here's a small text description for the card content. Nothing more,
-      nothing less.
-    </ion-card-content>
-  </ion-card>
-
-  <br />
-  <button (click)="setLanguage('en')">English</button>
-  <br />
-  <button (click)="setLanguage('tl')">Telugu</button>
-  <ion-list>
-    @for (message of getMessages(); track message) {
-    <app-message [message]="message"></app-message>
-    }
-  </ion-list>
+  <app-start-yoga-card></app-start-yoga-card>
 </ion-content>

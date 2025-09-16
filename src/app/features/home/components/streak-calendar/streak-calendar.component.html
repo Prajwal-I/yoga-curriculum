@@ -1,0 +1,16 @@
+<div class="calendar-container">
+  @for(day of weekCalendar; track day.dayName) {
+  <div class="day-container">
+    <div class="day-mark" [class.is-marked]="day.pacticeDone">
+      {{ day.dayName.charAt(0) }}
+    </div>
+    <div
+      class="day-name"
+      [class.is-today]="day.dayName === todayName"
+      [class.is-marked-name]="day.pacticeDone"
+    >
+      {{ day.dayName.substring(0, 3) }}
+    </div>
+  </div>
+  }
+</div>

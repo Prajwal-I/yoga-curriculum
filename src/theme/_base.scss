@@ -2,3 +2,29 @@ ion-content {
   --background: var(--ion-color-light-grey);
   --color: var(--ion-color-dark-grey);
 }
+
+ion-card,
+ion-card-header,
+ion-card-title,
+ion-card-subtitle,
+ion-card-content {
+  --color: var(--ion-color-dark-grey);
+}
+
+ion-button {
+  --background: linear-gradient(
+    to top right,
+    var(--ion-color-saffron-orange),
+    var(--ion-color-saffron-orange-dark)
+  );
+  --color: white;
+}
+
+ion-icon {
+  color: var(--ion-color-saffron-orange);
+  font-size: 1.6em;
+}
+
+html {
+  -webkit-text-size-adjust: 100% !important;
+}

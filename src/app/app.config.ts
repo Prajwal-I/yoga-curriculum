@@ -5,6 +5,13 @@ import {
 } from '@ngx-translate/core';
 import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
 import { provideHttpClient } from '@angular/common/http';
+import { addIcons } from 'ionicons';
+import { time, timeOutline } from 'ionicons/icons';
+
+addIcons({
+  time,
+  timeOutline,
+});
 
 export const appConfig: ApplicationConfig = {
   providers: [

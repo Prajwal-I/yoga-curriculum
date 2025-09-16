@@ -9,20 +9,15 @@ import {
   IonRefresherContent,
   IonList,
 } from '@ionic/angular/standalone';
-import { MessageComponent } from '@features/home/components/message/message.component';
 
 import {
   DataService,
   Message,
 } from '@src/src/app/core/services/api/data.service';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
-import {
-  IonCard,
-  IonCardContent,
-  IonCardHeader,
-  IonCardSubtitle,
-  IonCardTitle,
-} from '@ionic/angular/standalone';
+import { WeeklyReportComponent } from './components/weekly-report/weekly-report.component';
+import { StartYogaCardComponent } from './components/start-yoga-card/start-yoga-card.component';
+import { PatanjaliMaharishiStatueComponent } from './components/patanjali-maharishi-statue/patanjali-maharishi-statue.component';
 
 @Component({
   selector: 'app-home',
@@ -36,13 +31,10 @@ import {
     IonRefresher,
     IonRefresherContent,
     IonList,
-    MessageComponent,
     TranslatePipe,
-    IonCard,
-    IonCardContent,
-    IonCardHeader,
-    IonCardSubtitle,
-    IonCardTitle,
+    WeeklyReportComponent,
+    StartYogaCardComponent,
+    PatanjaliMaharishiStatueComponent,
   ],
 })
 export class HomePage {

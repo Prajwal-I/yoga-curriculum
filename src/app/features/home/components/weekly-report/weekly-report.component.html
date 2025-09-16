@@ -1,0 +1,13 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>{{ "home.weekly_progress" | translate }}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <app-streak-calendar></app-streak-calendar>
+    <div class="card-text">
+      <p>{{ streakDays + " " }} {{ "home.day_streak" | translate }}</p>
+      <a>{{ "home.tap_to_view_report" | translate }}</a>
+    </div>
+  </ion-card-content>
+</ion-card>

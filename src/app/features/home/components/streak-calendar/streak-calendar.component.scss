@@ -1,0 +1,30 @@
+.calendar-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 5%;
+  padding: 4% 0;
+}
+
+.day-container {
+  flex: 1 1 0;
+  text-align: center;
+
+  .day-mark {
+    background-color: var(--ion-color-medium-grey);
+    border-radius: 50%;
+    padding: 8px;
+  }
+}
+
+.is-marked {
+  background-color: var(--ion-color-saffron-orange) !important;
+  color: white;
+}
+
+.is-marked-name {
+  color: var(--ion-color-saffron-orange) !important;
+}
+
+.is-today {
+  border-bottom: 2px solid var(--ion-color-saffron-orange);
+}
