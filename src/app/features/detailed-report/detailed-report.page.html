@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>detailed-report</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">detailed-report</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <app-month-report-details></app-month-report-details>
+
+  <app-week-report-details></app-week-report-details>
+</ion-content>

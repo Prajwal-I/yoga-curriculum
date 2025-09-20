@@ -28,3 +28,37 @@ ion-icon {
 html {
   -webkit-text-size-adjust: 100% !important;
 }
+
+ion-datetime::part(calendar-day) {
+  border-radius: 30% !important;
+  margin: 2px !important;
+  font-weight: 500 !important;
+}
+ion-datetime::part(today) {
+  border: 1px solid var(--ion-color-saffron-orange) !important;
+  color: var(--ion-color-saffron-orange) !important;
+}
+ion-datetime::part(active) {
+  background: var(--ion-color-saffron-orange) !important;
+  color: white !important;
+  border: 1px solid var(--ion-color-saffron-orange) !important;
+}
+ion-datetime::part(month-year-button) {
+  font-size: large;
+}
+
+.morning-bg {
+  background: linear-gradient(to top, #4da6ff, #80d4ff);
+}
+
+.dawn-bg {
+  background: linear-gradient(to top, #fcb97d, #ff947f, #7bb3f2);
+}
+
+.dusk-bg {
+  background: linear-gradient(to top, #e96443, #904e95, #34495e);
+}
+
+.night-bg {
+  background: linear-gradient(to top, #0f2027, #203a43, #2c5364);
+}

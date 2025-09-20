@@ -8,6 +8,7 @@ import {
   IonCardTitle,
 } from '@ionic/angular/standalone';
 import { StreakCalendarComponent } from '../streak-calendar/streak-calendar.component';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-weekly-report',
@@ -21,6 +22,8 @@ import { StreakCalendarComponent } from '../streak-calendar/streak-calendar.comp
     IonCardSubtitle,
     IonCardTitle,
     StreakCalendarComponent,
+    RouterLink,
+    RouterOutlet,
   ],
 })
 export class WeeklyReportComponent implements OnInit {

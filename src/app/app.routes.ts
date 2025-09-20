@@ -3,17 +3,23 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: 'home',
-    loadComponent: () => import('@features/home/home.page').then((m) => m.HomePage),
+    loadComponent: () =>
+      import('@features/home/home.page').then((m) => m.HomePage),
   },
   {
-    path: 'message/:id',
+    path: 'detailed-report',
     loadComponent: () =>
-      import('@features/view-message/view-message.page').then((m) => m.ViewMessagePage),
+      import('@features/detailed-report/detailed-report.page').then(
+        (m) => m.DetailedReportPage
+      ),
   },
   {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',
   },
+  {
+    path: 'asanas-list-details',
+    loadComponent: () => import('./features/asanas-list-details/asanas-list-details.page').then( m => m.AsanasListDetailsPage)
+  },
 ];
-

@@ -7,7 +7,9 @@
     <app-streak-calendar></app-streak-calendar>
     <div class="card-text">
       <p>{{ streakDays + " " }} {{ "home.day_streak" | translate }}</p>
-      <a>{{ "home.tap_to_view_report" | translate }}</a>
+      <a routerLink="/detailed-report">{{
+        "home.tap_to_view_report" | translate
+      }}</a>
     </div>
   </ion-card-content>
 </ion-card>

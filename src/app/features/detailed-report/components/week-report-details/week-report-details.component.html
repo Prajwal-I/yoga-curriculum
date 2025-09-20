@@ -1,0 +1,38 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Week of September 7 - 13</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <div class="week-report-container">
+      @for(day of weekReportDetails; track day.date) {
+      <div class="day-details">
+        <div class="date practice-status not-done">
+          {{ day.date | date : "E, MMM d" }}
+        </div>
+        <div
+          class="practice-status"
+          [ngClass]="day.isPracticeDone ? 'done' : 'not-done'"
+        >
+          {{ day.isPracticeDone ? "Done" : "Not Done" }}
+        </div>
+        <div class="sessions-container">
+          @for(session of day.sessionDetails; track session.startTime) {
+          <div class="session-detail">
+            <div class="session-duration">
+              {{ sessionTimeConvert(session.durationMinutes) }}
+            </div>
+            <div
+              class="session-time"
+              [ngClass]="getClassNameBackground(session)"
+            >
+              {{ session.startTime | date : "h:mm a" }} -
+              {{ session.endTime | date : "h:mm a" }}
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+      }
+    </div>
+  </ion-card-content>
+</ion-card>

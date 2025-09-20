@@ -1,0 +1,9 @@
+.month-report-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ion-datetime::part(month-year-button) {
+  pointer-events: none; /* disables click but keeps text visible */
+}
