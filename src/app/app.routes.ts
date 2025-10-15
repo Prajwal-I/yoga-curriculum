@@ -14,12 +14,15 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'asanas-list',
+    loadComponent: () =>
+      import('@features/asanas-list-details/asanas-list-details.page').then(
+        (m) => m.AsanasListDetailsPage
+      ),
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',
-  },
-  {
-    path: 'asanas-list-details',
-    loadComponent: () => import('./features/asanas-list-details/asanas-list-details.page').then( m => m.AsanasListDetailsPage)
   },
 ];

@@ -1,16 +1,15 @@
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
-import {
-  provideTranslateService,
-  provideTranslateLoader,
-} from '@ngx-translate/core';
+import { provideTranslateService } from '@ngx-translate/core';
 import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
 import { provideHttpClient } from '@angular/common/http';
 import { addIcons } from 'ionicons';
-import { time, timeOutline } from 'ionicons/icons';
+import { layersOutline, syncOutline, time, timeOutline } from 'ionicons/icons';
 
 addIcons({
   time,
   timeOutline,
+  syncOutline,
+  layersOutline,
 });
 
 export const appConfig: ApplicationConfig = {

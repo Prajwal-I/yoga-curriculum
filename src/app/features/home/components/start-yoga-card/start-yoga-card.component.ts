@@ -9,6 +9,7 @@ import {
   IonButton,
   IonIcon,
 } from '@ionic/angular/standalone';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-start-yoga-card',
@@ -23,6 +24,7 @@ import {
     IonCardTitle,
     IonButton,
     IonIcon,
+    RouterLink,
   ],
 })
 export class StartYogaCardComponent implements OnInit {

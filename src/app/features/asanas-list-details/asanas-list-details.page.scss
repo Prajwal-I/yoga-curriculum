@@ -1,0 +1,105 @@
+.notice-card {
+  background-color: var(--ion-color-orange-background);
+  border: 1px solid var(--ion-color-saffron-orange-light);
+  margin: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ion-color-dark-grey);
+}
+
+.subtitle-text {
+  display: grid;
+  grid-template-areas:
+    "asanas-number asanas-time"
+    "asana-message asana-message";
+  span {
+    margin: 5px 0;
+    color: var(--ion-color-dark-grey);
+  }
+  .asanas-number {
+    grid-area: asanas-number;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  .asanas-time {
+    grid-area: asanas-time;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: right;
+  }
+  .asana-message {
+    grid-area: asana-message;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+}
+
+.asana-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 10px 0;
+  .asana-text {
+    font-size: 14px;
+    color: var(--ion-color-dark-grey);
+    font-weight: 500;
+
+    .asana-details {
+      font-size: 12px;
+      color: var(--ion-color-dark-grey);
+      font-weight: 500;
+      margin-top: 4%;
+      display: flex;
+      gap: 10px;
+
+      ion-icon {
+        vertical-align: middle;
+        font-size: 16px;
+        margin-right: 4px;
+        color: var(--ion-color-saffron-orange);
+      }
+    }
+  }
+
+  .asana-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+}
+
+.pranayama-card {
+  margin-bottom: 120px;
+}
+
+.start-button {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 1000;
+  background-color: var(--ion-color-light-grey);
+  padding: 10px;
+
+  .button-text-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ion-color-dark-grey);
+
+    h5 {
+      font-size: 14px;
+      margin: 5px 0;
+    }
+    p {
+      font-size: 12px;
+      font-weight: 500;
+      margin: 0;
+    }
+  }
+}

@@ -1,12 +1,16 @@
 {
   "home": {
     "om": "Om namah shivay",
-    "title": "🕉️ Atha Yoga-Anuśāsanam 🪷",
+    "title": "🕉️ Atha Yoga-Anuśāsanam 🪔",
     "weekly_progress": "Weekly Progress",
     "day_streak": "day streak! 🔥",
     "tap_to_view_report": "Tap to view detailed report",
     "start_yoga_title": "Daily Yoga 🧘‍♂️ - Find Your Inner Peace",
     "start_yoga_quote": "\"Yogaḥ chitta-vṛtti-nirodhaḥ\" / \"Yoga is the cessation of the fluctuations of the mind\" — Maharishi Patanjali",
     "start_yoga_button": "Start Yoga Session"
+  },
+  "asanas_list_details": {
+    "notice_message": "Practice at your own pace and listen to your body. Beginners may take longer and may not do the poses perfectly. Do what you can, and with regular practice your body will gain flexibility and improve naturally.",
+    "asana_title": "Asanas"
   }
 }
