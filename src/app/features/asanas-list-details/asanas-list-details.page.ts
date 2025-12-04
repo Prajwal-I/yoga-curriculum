@@ -19,6 +19,7 @@ import {
   IonButton,
 } from '@ionic/angular/standalone';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-asanas-list-details',
@@ -44,11 +45,11 @@ import { TranslatePipe, TranslateService } from '@ngx-translate/core';
     IonItem,
     IonIcon,
     IonButton,
+    RouterLink,
   ],
 })
 export class AsanasListDetailsPage implements OnInit {
   private translate = inject(TranslateService);
-
   //TODO: Replace with actual data model
   readonly asanasList = [
     {

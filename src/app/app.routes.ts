@@ -25,4 +25,9 @@ export const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full',
   },
+  {
+    path: 'asanam/:asanamSequenceId',
+    loadComponent: () =>
+      import('./features/asanam/asanam.page').then((m) => m.AsanamPage),
+  },
 ];
