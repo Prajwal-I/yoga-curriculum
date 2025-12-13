@@ -1,12 +1,20 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button
-        defaultHref="/asanas-list"
-        routerDirection="back"
-      ></ion-back-button>
+      <ion-back-button defaultHref="/asanas-list" routerDirection="back"></ion-back-button>
     </ion-buttons>
-    <ion-title>asanam</ion-title>
+    <ion-title>
+      <div class="asana-title">
+        <span>{{ asanam.asanam_name }}</span>
+        <span>
+          <ion-icon name="sync-outline"></ion-icon>
+          <span class="asana-cycles">
+            {{ asanam.no_of_cycles }}
+            Cycles
+          </span>
+        </span>
+      </div>
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -16,4 +24,5 @@
       <ion-title size="large">asanam</ion-title>
     </ion-toolbar>
   </ion-header>
+  <app-guided-audio [audioUrl]="asanam.guided_instructions_audio_url"></app-guided-audio>
 </ion-content>

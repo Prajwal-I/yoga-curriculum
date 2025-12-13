@@ -8,9 +8,11 @@ import {
   IonToolbar,
   IonButtons,
   IonBackButton,
+  IonIcon,
 } from '@ionic/angular/standalone';
 import { ActivatedRoute } from '@angular/router';
-import { Asanam } from '../../core/models/asanam';
+import { Asanam } from '@core/models/asanam';
+import { GuidedAudioComponent } from './components/guided-audio/guided-audio.component';
 
 @Component({
   selector: 'app-asanam',
@@ -26,7 +28,9 @@ import { Asanam } from '../../core/models/asanam';
     FormsModule,
     IonButtons,
     IonBackButton,
-    ],
+    IonIcon,
+    GuidedAudioComponent,
+  ],
 })
 export class AsanamPage implements OnInit {
   private urlAsanamSequenceId!: string;
@@ -52,7 +56,7 @@ export class AsanamPage implements OnInit {
       },
     ],
     guided_instructions_audio_url:
-      'https://example.com/audios/pranamasanam_guide.mp3',
+      'https://commondatastorage.googleapis.com/codeskulptor-assets/Epoq-Lepidoptera.ogg',
     asanam_video_url: 'https://example.com/videos/pranamasanam_demo.mp4',
   };
 

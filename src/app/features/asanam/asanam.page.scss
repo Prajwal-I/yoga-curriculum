@@ -1,0 +1,18 @@
+.asana-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    ion-icon {
+        vertical-align: middle;
+        font-size: 16px;
+        margin-right: 4px;
+        color: var(--ion-color-saffron-orange);
+    }
+
+    .asana-cycles {
+        font-size: 14px;
+        color: var(--ion-color-dark-grey);
+        font-weight: 500;
+    }
+}

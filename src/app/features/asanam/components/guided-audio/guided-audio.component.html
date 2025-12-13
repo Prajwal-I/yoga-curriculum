@@ -1,0 +1,29 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Guided Instructions</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <div class="audio-player-container">
+      <ion-range [min]="0" [max]="duration" [value]="currentTime" (ionKnobMoveEnd)="onRangeChange($event)"
+        color="primary">
+        <ion-text slot="start" class="time-label">{{ formatTime(currentTime) }}</ion-text>
+        <ion-text slot="end" class="time-label">{{ formatTime(duration) }}</ion-text>
+      </ion-range>
+
+      <div class="controls-container">
+        <ion-button fill="clear" shape="round" (click)="seekBackward()">
+          <img width="30px" src="assets/icon/5-sec-backward.png" alt="Seek Backward">
+        </ion-button>
+
+        <ion-button fill="solid" shape="round" size="large" (click)="togglePlayPause()">
+          <ion-icon [name]="isPlaying ? 'pause' : 'play'" slot="icon-only"></ion-icon>
+        </ion-button>
+
+        <ion-button fill="clear" shape="round" (click)="seekForward()">
+          <img width="30px" src="assets/icon/5-sec-forward.png" alt="Seek Forward">
+        </ion-button>
+      </div>
+    </div>
+  </ion-card-content>
+</ion-card>
