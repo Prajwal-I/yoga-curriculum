@@ -5,8 +5,7 @@
 
   <ion-card-content>
     <div class="audio-player-container">
-      <ion-range [min]="0" [max]="duration" [value]="currentTime" (ionKnobMoveEnd)="onRangeChange($event)"
-        color="primary">
+      <ion-range [min]="0" [max]="duration" [value]="currentTime" (ionKnobMoveEnd)="onRangeChange($event)">
         <ion-text slot="start" class="time-label">{{ formatTime(currentTime) }}</ion-text>
         <ion-text slot="end" class="time-label">{{ formatTime(duration) }}</ion-text>
       </ion-range>

@@ -12,11 +12,9 @@ ion-card-content {
 }
 
 ion-button {
-  --background: linear-gradient(
-    to top right,
-    var(--ion-color-saffron-orange),
-    var(--ion-color-saffron-orange-dark)
-  );
+  --background: linear-gradient(to top right,
+      var(--ion-color-saffron-orange),
+      var(--ion-color-saffron-orange-dark));
   --color: white;
 }
 
@@ -34,18 +32,44 @@ ion-datetime::part(calendar-day) {
   margin: 2px !important;
   font-weight: 500 !important;
 }
+
 ion-datetime::part(today) {
   border: 1px solid var(--ion-color-saffron-orange) !important;
   color: var(--ion-color-saffron-orange) !important;
 }
+
 ion-datetime::part(active) {
   background: var(--ion-color-saffron-orange) !important;
   color: white !important;
   border: 1px solid var(--ion-color-saffron-orange) !important;
 }
+
 ion-datetime::part(month-year-button) {
   font-size: large;
 }
+
+ion-range {
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  // Seek (active bar) as light orange
+  --bar-background-active: var(--ion-color-saffron-orange);
+  // Main bar (background) and dot (knob) as dark orange
+  --bar-background: var(--ion-color-medium-grey);
+  --knob-background: var(--ion-color-saffron-orange);
+}
+
+ion-segment-button {
+  --indicator-color: var(--ion-color-saffron-orange);
+  --color-checked: var(--ion-color-saffron-orange);
+  --ripple-color: var(--ion-color-saffron-orange-light);
+}
+
+ion-segment-view {
+  padding-top: 16px;
+}
+
+
 
 .morning-bg {
   background: linear-gradient(to top, #4da6ff, #80d4ff);

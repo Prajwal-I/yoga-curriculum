@@ -24,5 +24,28 @@
       <ion-title size="large">asanam</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-segment [value]="selectedTab" (ionChange)="onTabChange($event)">
+        <ion-segment-button value="steps" content-id="steps">
+          <ion-label>Steps</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="video" content-id="video">
+          <ion-label>Video</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+      <ion-segment-view>
+        <ion-segment-content id="steps">
+          <app-asanam-steps [steps]="asanam.steps"></app-asanam-steps>
+        </ion-segment-content>
+        <ion-segment-content id="video">
+          <app-asanam-video [videoUrl]="asanam.asanam_video_url"></app-asanam-video>
+        </ion-segment-content>
+      </ion-segment-view>
+    </ion-card-content>
+  </ion-card>
+
   <app-guided-audio [audioUrl]="asanam.guided_instructions_audio_url"></app-guided-audio>
+
 </ion-content>

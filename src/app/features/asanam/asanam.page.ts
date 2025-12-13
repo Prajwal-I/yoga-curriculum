@@ -9,10 +9,19 @@ import {
   IonButtons,
   IonBackButton,
   IonIcon,
+  IonSegment,
+  IonSegmentButton,
+  IonSegmentView,
+  IonSegmentContent,
+  IonLabel,
+  IonCard,
+  IonCardContent,
 } from '@ionic/angular/standalone';
 import { ActivatedRoute } from '@angular/router';
 import { Asanam } from '@core/models/asanam';
 import { GuidedAudioComponent } from './components/guided-audio/guided-audio.component';
+import { AsanamStepsComponent } from './components/asanam-steps/asanam-steps.component';
+import { AsanamVideoComponent } from './components/asanam-video/asanam-video.component';
 
 @Component({
   selector: 'app-asanam',
@@ -29,12 +38,23 @@ import { GuidedAudioComponent } from './components/guided-audio/guided-audio.com
     IonButtons,
     IonBackButton,
     IonIcon,
+    IonSegment,
+    IonSegmentButton,
+    IonSegmentView,
+    IonSegmentContent,
+    IonLabel,
     GuidedAudioComponent,
+    AsanamStepsComponent,
+    AsanamVideoComponent,
+    IonCard,
+    IonCardContent,
   ],
 })
 export class AsanamPage implements OnInit {
   private urlAsanamSequenceId!: string;
   private route = inject(ActivatedRoute);
+  selectedTab: string = 'steps';
+
   protected asanam: Asanam = {
     asanamSequenceId: 1,
     asanam_name: 'pranamasanam',
@@ -63,5 +83,9 @@ export class AsanamPage implements OnInit {
   ngOnInit() {
     this.urlAsanamSequenceId =
       this.route.snapshot.paramMap.get('asanamSequenceId') || '1';
+  }
+
+  onTabChange(event: any) {
+    this.selectedTab = event.detail.value;
   }
 }

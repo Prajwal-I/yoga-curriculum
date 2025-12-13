@@ -4,17 +4,11 @@
     align-items: center;
     padding: 10px;
 
-    ion-range {
-        width: 100%;
-        padding-left: 0;
-        padding-right: 0;
-
-        .time-label {
-            font-size: 12px;
-            color: var(--ion-color-medium);
-            min-width: 40px;
-            text-align: center;
-        }
+    .time-label {
+        font-size: 12px;
+        color: var(--ion-color-medium);
+        min-width: 40px;
+        text-align: center;
     }
 
     .controls-container {

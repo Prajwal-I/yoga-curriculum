@@ -1,3 +1,15 @@
-<p>
-  asanam-steps works!
-</p>
+<ion-list>
+  @for (step of steps; track step.step_sequence_id) {
+  <ion-item>
+    @if (step.step_image_url) {
+    <ion-thumbnail slot="start">
+      <img [src]="step.step_image_url" alt="{{ step.step_name }}" />
+    </ion-thumbnail>
+    }
+    <ion-label class="ion-text-wrap">
+      <h2>{{ step.step_name }}</h2>
+      <p>{{ step.step_description }}</p>
+    </ion-label>
+  </ion-item>
+  }
+</ion-list>
