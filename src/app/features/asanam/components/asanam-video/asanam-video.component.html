@@ -1,9 +1,9 @@
 @if (videoUrl) {
 <div class="video-container">
-  <video controls>
-    <source [src]="videoUrl" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+  <iframe [src]="safeVideoUrl" title="YouTube video player" frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
 </div>
 } @else {
 <div class="no-video">

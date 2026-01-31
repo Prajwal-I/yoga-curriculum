@@ -35,17 +35,26 @@
           <ion-label>Video</ion-label>
         </ion-segment-button>
       </ion-segment>
-      <ion-segment-view>
-        <ion-segment-content id="steps">
-          <app-asanam-steps [steps]="asanam.steps"></app-asanam-steps>
-        </ion-segment-content>
-        <ion-segment-content id="video">
-          <app-asanam-video [videoUrl]="asanam.asanam_video_url"></app-asanam-video>
-        </ion-segment-content>
-      </ion-segment-view>
+      @if (selectedTab === 'steps') {
+      <app-asanam-steps [steps]="asanam.steps"></app-asanam-steps>
+      }
+      @if (selectedTab === 'video') {
+      <app-asanam-video [videoUrl]="asanam.asanam_video_url"></app-asanam-video>
+      }
     </ion-card-content>
   </ion-card>
 
   <app-guided-audio [audioUrl]="asanam.guided_instructions_audio_url"></app-guided-audio>
 
+  <div class="start-button">
+    <ion-button expand="block" fill="outline" shape="round" routerLink="/asanam/1">
+      Previous
+    </ion-button>
+    <ion-button expand="block" shape="round" routerLink="/asanam/1">
+      Done
+    </ion-button>
+    <ion-button expand="block" fill="outline" shape="round" routerLink="/asanam/1">
+      Skip
+    </ion-button>
+  </div>
 </ion-content>

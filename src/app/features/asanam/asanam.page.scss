@@ -16,3 +16,20 @@
         font-weight: 500;
     }
 }
+
+.start-button {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--ion-color-light-grey);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+
+    ion-button {
+        flex: 1;
+    }
+}

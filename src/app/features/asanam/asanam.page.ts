@@ -16,6 +16,7 @@ import {
   IonLabel,
   IonCard,
   IonCardContent,
+  IonButton,
 } from '@ionic/angular/standalone';
 import { ActivatedRoute } from '@angular/router';
 import { Asanam } from '@core/models/asanam';
@@ -40,14 +41,13 @@ import { AsanamVideoComponent } from './components/asanam-video/asanam-video.com
     IonIcon,
     IonSegment,
     IonSegmentButton,
-    IonSegmentView,
-    IonSegmentContent,
     IonLabel,
     GuidedAudioComponent,
     AsanamStepsComponent,
     AsanamVideoComponent,
     IonCard,
     IonCardContent,
+    IonButton,
   ],
 })
 export class AsanamPage implements OnInit {
@@ -77,7 +77,7 @@ export class AsanamPage implements OnInit {
     ],
     guided_instructions_audio_url:
       'https://commondatastorage.googleapis.com/codeskulptor-assets/Epoq-Lepidoptera.ogg',
-    asanam_video_url: 'https://example.com/videos/pranamasanam_demo.mp4',
+    asanam_video_url: 'https://www.youtube.com/watch?v=W6aon9e0GeM',
   };
 
   ngOnInit() {

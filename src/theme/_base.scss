@@ -11,11 +11,16 @@ ion-card-content {
   --color: var(--ion-color-dark-grey);
 }
 
-ion-button {
+ion-button:not([fill]) {
   --background: linear-gradient(to top right,
       var(--ion-color-saffron-orange),
       var(--ion-color-saffron-orange-dark));
   --color: white;
+}
+
+ion-button[fill="outline"] {
+  --color: var(--ion-color-saffron-orange);
+  --border-color: var(--ion-color-saffron-orange);
 }
 
 ion-icon {
