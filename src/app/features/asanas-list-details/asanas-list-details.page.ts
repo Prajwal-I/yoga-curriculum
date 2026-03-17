@@ -101,7 +101,7 @@ export class AsanasListDetailsPage implements OnInit {
       steps: 3,
       cycles: 1,
       imageUrl:
-        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpixahive.com%2Fwp-content%2Fuploads%2F2021%2F02%2FAnulom-Vilom-Alternate-Nostril-Breathing-357382-pixahive-1024x643.jpg&f=1&nofb=1&ipt=f51468cf482dd6beb174881ce12c3cb0c3be9fe10b623950b0e42d42c8dbd2d8',
+        'https://images.onlymyhealth.com/only-my-health-english/images/2024/12/02/article/image/mn-Kapalbhati-1733122346934.webp',
     },
     {
       name: 'Kapalbhati',
@@ -109,7 +109,7 @@ export class AsanasListDetailsPage implements OnInit {
       steps: 4,
       cycles: 1,
       imageUrl:
-        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpixahive.com%2Fwp-content%2Fuploads%2F2021%2F02%2FAnulom-Vilom-Alternate-Nostril-Breathing-357382-pixahive-1024x643.jpg&f=1&nofb=1&ipt=f51468cf482dd6beb174881ce12c3cb0c3be9fe10b623950b0e42d42c8dbd2d8',
+        'https://images.onlymyhealth.com/only-my-health-english/images/2024/12/02/article/image/mn-Kapalbhati-1733122346934.webp',
     },
     {
       name: 'Bhramari',
@@ -117,7 +117,7 @@ export class AsanasListDetailsPage implements OnInit {
       steps: 4,
       cycles: 1,
       imageUrl:
-        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpixahive.com%2Fwp-content%2Fuploads%2F2021%2F02%2FAnulom-Vilom-Alternate-Nostril-Breathing-357382-pixahive-1024x643.jpg&f=1&nofb=1&ipt=f51468cf482dd6beb174881ce12c3cb0c3be9fe10b623950b0e42d42c8dbd2d8',
+        'https://images.onlymyhealth.com/only-my-health-english/images/2024/12/02/article/image/mn-Kapalbhati-1733122346934.webp',
     },
     {
       name: 'Shambavi Mudra',
@@ -125,11 +125,11 @@ export class AsanasListDetailsPage implements OnInit {
       steps: 4,
       cycles: 1,
       imageUrl:
-        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpixahive.com%2Fwp-content%2Fuploads%2F2021%2F02%2FAnulom-Vilom-Alternate-Nostril-Breathing-357382-pixahive-1024x643.jpg&f=1&nofb=1&ipt=f51468cf482dd6beb174881ce12c3cb0c3be9fe10b623950b0e42d42c8dbd2d8',
+        'https://images.onlymyhealth.com/only-my-health-english/images/2024/12/02/article/image/mn-Kapalbhati-1733122346934.webp',
     },
   ];
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 }
