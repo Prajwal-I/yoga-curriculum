@@ -16,17 +16,17 @@ export class MonthReportDetailsComponent implements OnInit {
 
   //TODO: Replace with actual selected dates from user data.
   selectedDates: string[] = [
-    '2025-09-01',
-    '2025-09-05',
-    '2025-09-10',
-    '2025-09-11',
-    '2025-09-12',
-    '2025-09-16',
-    '2025-08-15',
-    '2025-08-20',
-    '2025-08-21',
-    '2025-08-22',
-    '2025-09-06',
+    '2025-09-01T06:00:00',
+    '2025-09-05T20:00:00',
+    '2025-09-10T06:00:00',
+    '2025-09-11T16:00:00',
+    '2025-09-12T06:00:00',
+    '2025-09-16T06:00:00',
+    '2025-08-15T16:00:00',
+    '2025-08-20T06:00:00',
+    '2025-08-21T06:00:00',
+    '2025-08-22T02:00:00',
+    '2025-09-06T06:00:00',
   ];
 
   constructor() {
@@ -37,5 +37,5 @@ export class MonthReportDetailsComponent implements OnInit {
     this.maxDate = lastDay.toISOString();
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 }

@@ -65,14 +65,27 @@ export class AsanamPage implements OnInit {
         step_name: 'Starting Position',
         step_description:
           'Stand straight with feet together and arms at sides.',
-        step_image_url: 'https://example.com/images/pranamasanam_step1.jpg',
+        step_image_url: 'https://gifdb.com/images/high/yoga-sun-salutation-cartoon-wc997kkjfpx15a2p.gif',
       },
       {
         step_sequence_id: 2,
         step_name: 'Raise Arms',
         step_description:
           'Inhale and raise your arms sideways to shoulder height.',
-        step_image_url: 'https://example.com/images/pranamasanam_step2.jpg',
+        step_image_url: 'https://media1.tenor.com/m/fdZuoewysXAAAAAd/yoga-nayanthara.gif',
+      },
+      {
+        step_sequence_id: 3,
+        step_name: 'Step Back',
+        step_description:
+          'Inhale and raise your arms sideways to shoulder height.',
+        step_image_url: 'https://i.gifer.com/XFT6.gif',
+      }, {
+        step_sequence_id: 4,
+        step_name: 'Step Forward',
+        step_description:
+          'Inhale and raise your arms sideways to shoulder height.',
+        step_image_url: 'https://gifdb.com/images/high/yoga-sun-salutation-cartoon-wc997kkjfpx15a2p.gif',
       },
     ],
     guided_instructions_audio_url:

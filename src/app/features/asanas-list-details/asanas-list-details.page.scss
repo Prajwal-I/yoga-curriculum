@@ -1,34 +1,27 @@
-.notice-card {
-  background-color: var(--ion-color-orange-background);
-  border: 1px solid var(--ion-color-saffron-orange-light);
-  margin: 10px;
-  padding: 0 5px 0 10px;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--ion-color-dark-grey);
-}
-
 .subtitle-text {
   display: grid;
   grid-template-areas:
     "asanas-number asanas-time"
     "asana-message asana-message";
+
   span {
     margin: 5px 0;
     color: var(--ion-color-dark-grey);
   }
+
   .asanas-number {
     grid-area: asanas-number;
     font-weight: 500;
     font-size: 14px;
   }
+
   .asanas-time {
     grid-area: asanas-time;
     font-weight: 600;
     font-size: 14px;
     text-align: right;
   }
+
   .asana-message {
     grid-area: asana-message;
     font-size: 12px;
@@ -41,6 +34,7 @@
   align-items: center;
   gap: 15px;
   margin: 10px 0;
+
   .asana-text {
     font-size: 14px;
     color: var(--ion-color-dark-grey);
@@ -96,6 +90,7 @@
       font-size: 14px;
       margin: 5px 0;
     }
+
     p {
       font-size: 12px;
       font-weight: 500;

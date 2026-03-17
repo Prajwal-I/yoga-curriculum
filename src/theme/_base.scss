@@ -91,3 +91,14 @@ ion-segment-view {
 .night-bg {
   background: linear-gradient(to top, #0f2027, #203a43, #2c5364);
 }
+
+.notice-card {
+  background-color: var(--ion-color-orange-background);
+  border: 1px solid var(--ion-color-saffron-orange-light);
+  margin: 10px;
+  padding: 0 5px 0 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ion-color-dark-grey);
+}

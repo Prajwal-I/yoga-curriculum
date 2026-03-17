@@ -44,7 +44,11 @@
     </ion-card-content>
   </ion-card>
 
-  <app-guided-audio [audioUrl]="asanam.guided_instructions_audio_url"></app-guided-audio>
+  @if (selectedTab === 'steps') {
+  <div class="audio-container">
+    <app-guided-audio [audioUrl]="asanam.guided_instructions_audio_url"></app-guided-audio>
+  </div>
+  }
 
   <div class="start-button">
     <ion-button expand="block" fill="outline" shape="round" routerLink="/asanam/1">

@@ -1,12 +1,8 @@
 <ion-card>
   <ion-card-content>
     <div class="month-report-container">
-      <ion-datetime
-        presentation="date"
-        readonly="true"
-        [max]="maxDate"
-        [value]="selectedDates"
-      ></ion-datetime>
+      <ion-datetime presentation="date" readonly="true" [max]="maxDate" [value]="selectedDates" multiple="true"
+        minuteValues="0,15,30,45"></ion-datetime>
     </div>
   </ion-card-content>
 </ion-card>
