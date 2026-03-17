@@ -12,4 +12,5 @@ export interface Asanam {
   steps: AsanamStep[];
   guided_instructions_audio_url: string;
   asanam_video_url: string;
+  asanam_video_change_step_timestamps: string[][];
 }

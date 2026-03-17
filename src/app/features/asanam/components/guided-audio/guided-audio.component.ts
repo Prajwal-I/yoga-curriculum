@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
+import { Component, input, output, computed, OnInit, OnDestroy, ViewChild, ElementRef, ChangeDetectorRef, NgZone } from '@angular/core';
 import { IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonButton, IonIcon, IonRange, IonText, IonGrid, IonRow, IonCol } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { play, pause, playSkipForward, playSkipBack } from 'ionicons/icons';
@@ -27,19 +27,32 @@ import { FormsModule } from '@angular/forms';
   ]
 })
 export class GuidedAudioComponent implements OnInit, OnDestroy {
-  @Input() audioUrl: string = '';
+  audioUrl = input<string>('');
+  timestamps = input<string[][]>([]);
+  stepChange = output<number>();
 
   audio: HTMLAudioElement | null = null;
   isPlaying: boolean = false;
   currentTime: number = 0;
   duration: number = 0;
+  
+  parsedTimestamps = computed(() => {
+    const ts = this.timestamps();
+    if (!ts) return [];
+    return ts.map(t => {
+      const parts = t[0].split(':');
+      const time = parseInt(parts[0], 10) * 60 + parseInt(parts[1], 10);
+      return { time, step: parseInt(t[1], 10) - 1 };
+    }).sort((a, b) => a.time - b.time);
+  });
+  lastEmittedStep: number = 0;
 
-  constructor() {
+  constructor(private cdr: ChangeDetectorRef, private ngZone: NgZone) {
     addIcons({ play, pause, playSkipForward, playSkipBack });
   }
 
   ngOnInit() {
-    if (this.audioUrl) {
+    if (this.audioUrl()) {
       this.initAudio();
     }
   }
@@ -52,20 +65,49 @@ export class GuidedAudioComponent implements OnInit, OnDestroy {
   }
 
   initAudio() {
-    this.audio = new Audio(this.audioUrl);
+    this.audio = new Audio(this.audioUrl());
 
     this.audio.addEventListener('loadedmetadata', () => {
-      this.duration = this.audio?.duration || 0;
+      this.ngZone.run(() => {
+        this.duration = this.audio?.duration || 0;
+        this.cdr.detectChanges();
+      });
     });
 
     this.audio.addEventListener('timeupdate', () => {
-      this.currentTime = this.audio?.currentTime || 0;
+      this.ngZone.run(() => {
+        this.currentTime = this.audio?.currentTime || 0;
+        this.checkTimestamps();
+        this.cdr.detectChanges();
+      });
     });
 
     this.audio.addEventListener('ended', () => {
-      this.isPlaying = false;
-      this.currentTime = 0;
+      this.ngZone.run(() => {
+        this.isPlaying = false;
+        this.currentTime = 0;
+        this.checkTimestamps();
+        this.cdr.detectChanges();
+      });
     });
+  }
+
+  checkTimestamps() {
+    let currentStep = 0;
+    const timestamps = this.parsedTimestamps();
+    for (const ts of timestamps) {
+      if (this.currentTime >= ts.time) {
+        currentStep = ts.step;
+      } else {
+        break;
+      }
+    }
+    
+    if (currentStep !== this.lastEmittedStep) {
+      console.log('Emitting step change:', currentStep);
+      this.lastEmittedStep = currentStep;
+      this.stepChange.emit(currentStep);
+    }
   }
 
   togglePlayPause() {

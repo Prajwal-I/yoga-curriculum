@@ -1,15 +1,15 @@
-@if (steps && steps.length > 0) {
+@if (steps() && steps().length > 0) {
 <div class="carousel-container">
   <div class="carousel-slide">
     <div class="image-wrapper">
-      <ion-button fill="clear" class="nav-btn prev-btn" (click)="prevStep()" [disabled]="currentIndex === 0">
+      <ion-button fill="clear" class="nav-btn prev-btn" (click)="prevStep()" [disabled]="currentIndex() === 0">
         <ion-icon name="chevron-back-outline"></ion-icon>
       </ion-button>
 
       <div class="img-container">
         <!-- Display step image, or default to a placeholder if none is present -->
-        @if (steps[currentIndex].step_image_url) {
-        <img [src]="steps[currentIndex].step_image_url" [alt]="steps[currentIndex].step_name" />
+        @if (steps()[currentIndex()].step_image_url) {
+        <img [src]="steps()[currentIndex()].step_image_url" [alt]="steps()[currentIndex()].step_name" />
         } @else {
         <div class="no-image-placeholder">
           <span>No Image</span>
@@ -18,24 +18,24 @@
       </div>
 
       <ion-button fill="clear" class="nav-btn next-btn" (click)="nextStep()"
-        [disabled]="currentIndex === steps.length - 1">
+        [disabled]="currentIndex() === steps().length - 1">
         <ion-icon name="chevron-forward-outline"></ion-icon>
       </ion-button>
     </div>
 
     <div class="step-details notice-card">
       <h2 class="step-title">
-        {{ steps[currentIndex].step_sequence_id || (currentIndex + 1) }}. {{ steps[currentIndex].step_name }}
+        {{ steps()[currentIndex()].step_sequence_id || (currentIndex() + 1) }}. {{ steps()[currentIndex()].step_name }}
       </h2>
       <p class="step-description">
-        {{ steps[currentIndex].step_description }}
+        {{ steps()[currentIndex()].step_description }}
       </p>
     </div>
   </div>
 
   <div class="carousel-dots">
-    @for (step of steps; track step.step_sequence_id || $index; let i = $index) {
-    <span class="dot" [class.active]="i === currentIndex" (click)="currentIndex = i">
+    @for (step of steps(); track step.step_sequence_id || $index; let i = $index) {
+    <span class="dot" [class.active]="i === currentIndex()" (click)="setStep(i)">
     </span>
     }
   </div>

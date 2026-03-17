@@ -36,7 +36,7 @@
         </ion-segment-button>
       </ion-segment>
       @if (selectedTab === 'steps') {
-      <app-asanam-steps [steps]="asanam.steps"></app-asanam-steps>
+      <app-asanam-steps [steps]="asanam.steps" [(currentIndex)]="currentStepIndex"></app-asanam-steps>
       }
       @if (selectedTab === 'video') {
       <app-asanam-video [videoUrl]="asanam.asanam_video_url"></app-asanam-video>
@@ -46,7 +46,9 @@
 
   @if (selectedTab === 'steps') {
   <div class="audio-container">
-    <app-guided-audio [audioUrl]="asanam.guided_instructions_audio_url"></app-guided-audio>
+    <app-guided-audio [audioUrl]="asanam.guided_instructions_audio_url"
+      [timestamps]="asanam.asanam_video_change_step_timestamps"
+      (stepChange)="onStepChange($event)"></app-guided-audio>
   </div>
   }
 
