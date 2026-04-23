@@ -10,10 +10,6 @@ import {
   IonList,
 } from '@ionic/angular/standalone';
 
-import {
-  DataService,
-  Message,
-} from '@src/src/app/core/services/api/data.service';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { WeeklyReportComponent } from './components/weekly-report/weekly-report.component';
 import { StartYogaCardComponent } from './components/start-yoga-card/start-yoga-card.component';
@@ -38,7 +34,6 @@ import { PatanjaliMaharishiStatueComponent } from './components/patanjali-mahari
   ],
 })
 export class HomePage {
-  private data = inject(DataService);
   private translate = inject(TranslateService);
 
   constructor() {
@@ -52,9 +47,5 @@ export class HomePage {
     setTimeout(() => {
       (ev as RefresherCustomEvent).detail.complete();
     }, 3000);
-  }
-
-  getMessages(): Message[] {
-    return this.data.getMessages();
   }
 }
