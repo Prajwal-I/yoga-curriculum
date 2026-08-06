@@ -145,4 +145,22 @@ export class DatabaseService {
     const result = await this.db.query('SELECT * FROM yoga_sessions ORDER BY yoga_session_timestamp DESC');
     this.yogaSessions.set(result.values);
   }
+
+  async loadAsanamBySequenceId(sequenceId: number): Promise<Asanam | undefined> {
+    const result = await this.db.query(
+      'SELECT * FROM asanams WHERE asanam_sequence_id = ?',
+      [sequenceId]
+    );
+    return result.values && result.values.length > 0 ? result.values[0] as Asanam : undefined;
+  }
+
+  async getMinSequenceId(): Promise<number> {
+    const result = await this.db.query('SELECT MIN(asanam_sequence_id) as min_id FROM asanams');
+    return result.values && result.values.length > 0 ? result.values[0]['min_id'] : 1;
+  }
+
+  async getMaxSequenceId(): Promise<number> {
+    const result = await this.db.query('SELECT MAX(asanam_sequence_id) as max_id FROM asanams');
+    return result.values && result.values.length > 0 ? result.values[0]['max_id'] : 1;
+  }
 }

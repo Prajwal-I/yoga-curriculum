@@ -4,8 +4,9 @@
       <ion-back-button defaultHref="/asanas-list" routerDirection="back"></ion-back-button>
     </ion-buttons>
     <ion-title>
+      @if (asanam) {
       <div class="asana-title">
-        <span>{{ asanam.asanam_name }}</span>
+        <span>{{ asanam.steps[0]?.step_name || 'Asanam ' + asanam.asanam_sequence_id }}</span>
         <span>
           <ion-icon name="sync-outline"></ion-icon>
           <span class="asana-cycles">
@@ -14,6 +15,9 @@
           </span>
         </span>
       </div>
+      } @else {
+      <span>Asanam</span>
+      }
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -25,6 +29,28 @@
     </ion-toolbar>
   </ion-header>
 
+  <!-- Loading state -->
+  @if (isLoading) {
+  <div class="state-container">
+    <ion-spinner name="crescent"></ion-spinner>
+    <p>Loading asanam...</p>
+  </div>
+  }
+
+  <!-- Error / not-found state -->
+  @if (hasError) {
+  <div class="state-container error">
+    <ion-icon name="alert-circle-outline" class="error-icon"></ion-icon>
+    <h3>Oops!</h3>
+    <p>{{ errorMessage }}</p>
+    <ion-button expand="block" shape="round" routerLink="/asanas-list">
+      Back to list
+    </ion-button>
+  </div>
+  }
+
+  <!-- Main content (only when loaded successfully) -->
+  @if (!isLoading && !hasError && asanam) {
   <ion-card>
     <ion-card-content>
       <ion-segment [value]="selectedTab" (ionChange)="onTabChange($event)">
@@ -47,20 +73,47 @@
   @if (selectedTab === 'steps') {
   <div class="audio-container">
     <app-guided-audio [audioUrl]="asanam.guided_instructions_audio_url"
-      [timestamps]="asanam.asanam_video_change_step_timestamps"
+      [timestamps]="asanam.asanam_audio_change_step_timestamps"
       (stepChange)="onStepChange($event)"></app-guided-audio>
   </div>
   }
 
   <div class="start-button">
-    <ion-button expand="block" fill="outline" shape="round" routerLink="/asanam/1">
+    <ion-button expand="block" fill="outline" shape="round"
+      [disabled]="isFirstAsanam"
+      (click)="goToPrevious()">
       Previous
     </ion-button>
-    <ion-button expand="block" shape="round" routerLink="/asanam/1">
-      Done
+    <ion-button expand="block" shape="round"
+      (click)="onDone()">
+      {{ isLastAsanam ? 'Finish' : 'Done' }}
     </ion-button>
-    <ion-button expand="block" fill="outline" shape="round" routerLink="/asanam/1">
+    <ion-button expand="block" fill="outline" shape="round"
+      (click)="onSkip()">
       Skip
     </ion-button>
   </div>
+
+  <!-- Rest Splash Overlay -->
+  @if (showRestSplash) {
+  <div class="splash-overlay rest-splash">
+    <div class="splash-content">
+      <img src="assets/images/rest_splash.png" alt="Resting">
+      <h2>Rest and breathe</h2>
+      <p>Next asana starts in {{ restCountdown }}...</p>
+    </div>
+  </div>
+  }
+
+  <!-- Celebration Splash Overlay -->
+  @if (showCelebrationSplash) {
+  <div class="splash-overlay celebration-splash">
+    <div class="splash-content">
+      <img src="assets/images/celebration_splash.png" alt="Celebration">
+      <h2>Congratulations!</h2>
+      <p>You've completed your yoga session.</p>
+    </div>
+  </div>
+  }
+  }
 </ion-content>
