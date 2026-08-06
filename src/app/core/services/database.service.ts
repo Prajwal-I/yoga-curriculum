@@ -64,9 +64,6 @@ export class DatabaseService {
     // Enable foreign-key enforcement
     await this.db.execute('PRAGMA foreign_keys = ON;');
 
-    // Drop legacy tables from the old prototype
-    await this.dropLegacyTables();
-
     // Execute DDL schema from sql/schema.sql
     const schemaSql = await this.loadSqlFile('sql/schema.sql');
     await this.db.execute(schemaSql);
@@ -104,21 +101,6 @@ export class DatabaseService {
       .split('\n')
       .filter(line => !line.replace(/^\s+/, '').startsWith('--'))
       .join('\n');
-  }
-
-  // =========================================================================
-  // Legacy cleanup
-  // =========================================================================
-
-  /** Drop any tables left over from previous iterations */
-  private async dropLegacyTables() {
-    await this.db.execute(`
-      DROP TABLE IF EXISTS users;
-      DROP TABLE IF EXISTS asanam_steps;
-      DROP TABLE IF EXISTS asanams;
-      DROP TABLE IF EXISTS yoga_sessions;
-    `);
-    console.log('Legacy tables dropped');
   }
 
   // =========================================================================
