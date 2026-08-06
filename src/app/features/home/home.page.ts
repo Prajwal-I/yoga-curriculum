@@ -52,32 +52,19 @@ export class HomePage {
 
   private async testDatabase() {
     try {
-      console.log('--- Testing Yoga Curriculum Database ---');
-
-      // Load and log all asanams
       await this.db.loadAsanams();
-      const asanams = this.db.getAsanams();
-      console.log('📿 Asanams:', asanams);
-
-      // For each asanam, load its steps
-      if (asanams) {
-        for (const asanam of asanams) {
-          const steps = await this.db.loadStepsByAsanamId(asanam.asanam_id);
-          console.log(`  🧘 Steps for "${asanam.asanam_id}" (sequence ${asanam.asanam_sequence_id}):`, steps);
-        }
-      }
-
-      // Load and log all asanam steps
       await this.db.loadAsanamSteps();
-      console.log('🦶 All Asanam Steps:', this.db.getAsanamSteps());
-
-      // Load and log yoga sessions
       await this.db.loadYogaSessions();
-      console.log('📅 Yoga Sessions:', this.db.getYogaSessions());
 
-      console.log('--- Database Test Completed ---');
+      const dump = {
+        asanams: this.db.getAsanams(),
+        asanam_steps: this.db.getAsanamSteps(),
+        yoga_sessions: this.db.getYogaSessions(),
+      };
+
+      console.log('[DB DUMP]', JSON.stringify(dump, null, 2));
     } catch (error) {
-      console.error('Error testing yoga curriculum database:', error);
+      console.error('[DB DUMP ERROR]', error);
     }
   }
 

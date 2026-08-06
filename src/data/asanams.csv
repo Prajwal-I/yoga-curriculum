@@ -1,0 +1,4 @@
+asanam_id,asanam_sequence_id,no_of_cycles,guided_instructions_audio_url,asanam_video_url,asanam_audio_change_step_timestamps
+1,1,12,assets/asanams/surya_namaskar/audio/guide.mp3,assets/asanams/surya_namaskar/video/demo.mp4,"[[0.0, 4.5], [4.5, 9.0], [9.0, 14.2], [14.2, 19.8], [19.8, 25.0]]"
+2,2,1,assets/asanams/padmasana/audio/guide.mp3,assets/asanams/padmasana/video/demo.mp4,"[[0.0, 6.0], [6.0, 12.5], [12.5, 20.0]]"
+3,3,3,assets/asanams/trikonasana/audio/guide.mp3,assets/asanams/trikonasana/video/demo.mp4,"[[0.0, 5.0], [5.0, 10.5], [10.5, 16.0], [16.0, 22.0]]"
